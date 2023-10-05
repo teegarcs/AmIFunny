@@ -37,7 +37,7 @@ class JokeServiceImpl() : JokeService {
         val fullTemplate = promptTemplate.replace(JokePrompts.NOUN_PLACE_HOLDER, nouns) + ffmPrompt
 
         System.out.println("Joke Prompt: $fullTemplate")
-        val llmResponse = llmService.sendPrompt(fullTemplate, temperature = .7F)
+        val llmResponse = llmService.sendPrompt(fullTemplate, temperature = .9F)
         return llmResponse?.let {
             JokeResponse(joke = it)
         }
