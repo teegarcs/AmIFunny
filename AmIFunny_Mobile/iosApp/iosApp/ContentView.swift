@@ -1,6 +1,7 @@
 import SwiftUI
 import shared
 
+
 struct ContentView: View {
     @ObservedObject var viewModel: CreateJokeViewModel
     
@@ -8,16 +9,15 @@ struct ContentView: View {
         self.viewModel = CreateJokeViewModel()
     }
     
-    
     var body: some View {
         let state = viewModel.state
         
         JokeContent(state: viewModel.state, processIntent: viewModel.processIntent(intent:))
-            .onAppear {
-                viewModel.connect()
+            .task {
+                try? await viewModel.connect()
             }
             .onDisappear {
-                viewModel.dispose()
+                viewModel.clear()
             }
     }
 }

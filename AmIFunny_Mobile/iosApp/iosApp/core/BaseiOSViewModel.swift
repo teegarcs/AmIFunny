@@ -8,43 +8,25 @@
 
 import Foundation
 import shared
+import KMPNativeCoroutinesAsync
 
 //TODO look at protocol
 //consider swiftLint AirBNB linter rules
 class BaseiOSViewModel<T> : ObservableObject {
     
-    private var disposables = [DisposableHandle?]()
-    
-    internal lazy var scope: Kotlinx_coroutines_coreCoroutineScope = {
-        getCastedVM().scope
-    }()
-    
     private func getCastedVM() -> KMPBaseViewModel<AnyObject, AnyObject, AnyObject> {
         (getFeatureVM() as!KMPBaseViewModel<AnyObject, AnyObject, AnyObject>)
     }
     
-    
-    func connect() {
-        flowCollector(flow: getCastedVM().viewState){ viewState in
-            self.updateState(newState: viewState as! T)
+    func connect() async throws {
+        let sequence = asyncSequence(for: getCastedVM().viewStateFlow)
+        for try await viewState in sequence {
+            updateState(newState: viewState as! T)
         }
     }
     
-    //consider getting rid of disposables
-    func dispose() {
-        disposables.forEach { dis in
-            dis?.dispose()
-        }
-        
+    func clear() {
         getCastedVM().clear()
-    }
-    
-    func flowCollector<T>(flow: CommonFlow<T>, block: @escaping (T) -> Void){
-        let resultHandler = block
-        let handle = flow.subscribe(coroutineScope: scope){ result in
-            block(result!)
-        }
-        disposables.append(handle)
     }
     
     func updateState(newState: T) {

@@ -1,16 +1,21 @@
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    //trick: for the same plugin versions in all sub-modules
-    id("com.android.application").version("8.0.1").apply(false)
-    id("com.android.library").version("8.0.1").apply(false)
-    kotlin("android").version("1.8.21").apply(false)
-    kotlin("multiplatform").version("1.8.21").apply(false)
+    kotlin("android") version libs.versions.kotlin.get() apply false
+    kotlin("multiplatform") version libs.versions.kotlin.get() apply false
+    kotlin("plugin.serialization") version libs.versions.kotlin.get() apply false
+    id("com.android.application") version libs.versions.android.gradle.plugin.get() apply false
+    id("com.android.library") version libs.versions.android.gradle.plugin.get() apply false
+    id("com.google.devtools.ksp") version libs.versions.ksp.get() apply false
+    id("com.squareup.sqldelight") version libs.versions.sqlDelight.get() apply false
+    id("com.rickclephas.kmp.nativecoroutines") version libs.versions.kmpNativecoroutines.get() apply false
 }
 
-buildscript {
-
-    dependencies {
-        // ...
-        classpath("com.squareup.sqldelight:gradle-plugin:1.5.5")
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven("https://androidx.dev/storage/compose-compiler/repository/")
+        maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev/")
     }
 }
 

@@ -4,7 +4,7 @@
 
 import Foundation
 import shared
-
+import KMPNativeCoroutinesAsync
 
 class CreateJokeViewModel : BaseiOSViewModel<CreateJokeState> {
     private let featureVM: KMPCreateJokeViewModel

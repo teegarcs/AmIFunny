@@ -1,15 +1,15 @@
 package com.teegarcs.amifunny.core.mvi
 
-import com.teegarcs.amifunny.core.CommonFlow
-import com.teegarcs.amifunny.core.CommonStateFlow
-import com.teegarcs.amifunny.core.toCommonFlow
-import com.teegarcs.amifunny.core.toCommonStateFlow
+import com.rickclephas.kmp.nativecoroutines.NativeCoroutineScope
+import com.rickclephas.kmp.nativecoroutines.NativeCoroutines
+import com.rickclephas.kmp.nativecoroutines.NativeCoroutinesState
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.receiveAsFlow
 
@@ -19,13 +19,16 @@ import kotlinx.coroutines.flow.receiveAsFlow
 abstract class KMPBaseViewModel<VS : Any, SE : Any, I : Any>(
     _scope: CoroutineScope?
 ) {
+    @NativeCoroutineScope
     val scope = _scope ?: MainScope()
 
     private val _viewState: MutableStateFlow<VS> by lazy {
         MutableStateFlow(buildInitialState())
     }
-    val viewState: CommonStateFlow<VS>
-        get() = _viewState.asStateFlow().toCommonStateFlow()
+
+    @NativeCoroutinesState
+    val viewState: StateFlow<VS>
+        get() = _viewState.asStateFlow()
 
     val currentState: VS
         get() = viewState.value
@@ -33,8 +36,9 @@ abstract class KMPBaseViewModel<VS : Any, SE : Any, I : Any>(
     @Suppress("MemberVisibilityCanBePrivate")
     private val _sideEffectsChannel = Channel<SE>(Channel.UNLIMITED)
 
-    val sideEffects: CommonFlow<SE>
-        get() = _sideEffectsChannel.receiveAsFlow().toCommonFlow()
+    @NativeCoroutines
+    val sideEffects: Flow<SE>
+        get() = _sideEffectsChannel.receiveAsFlow()
 
     /**
      * Abstract function required to be implemented to build the Initial UI State Object. This
