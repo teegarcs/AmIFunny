@@ -3,8 +3,8 @@ kotlin = "1.8.21"
 
 ## SDK Versions
 minSdk = "29"
-targetSdk = "33"
-compileSdk = "33"
+targetSdk = "34"
+compileSdk = "34"
 
 # Dependencies
 android-gradle-plugin = "8.0.1"
@@ -13,7 +13,7 @@ android-gradle-plugin = "8.0.1"
 ksp = "1.9.10-1.0.13"
 
 compose = "1.5.3"
-composeCompiler = "1.4.7"
+composeCompiler = "1.5.3"
 #
 #android-desugaring = "1.1.8" # Don't bump to 1.2.x until AGP is 7.3.x
 #androidx-core = "1.9.0"
