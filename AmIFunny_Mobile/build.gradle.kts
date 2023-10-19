@@ -1,3 +1,4 @@
+
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     kotlin("android") version libs.versions.kotlin.get() apply false
@@ -8,6 +9,7 @@ plugins {
     id("com.google.devtools.ksp") version libs.versions.ksp.get() apply false
     id("com.squareup.sqldelight") version libs.versions.sqlDelight.get() apply false
     id("com.rickclephas.kmp.nativecoroutines") version libs.versions.kmpNativecoroutines.get() apply false
+    id("com.google.dagger.hilt.android") version libs.versions.hilt.get() apply false
 }
 
 allprojects {

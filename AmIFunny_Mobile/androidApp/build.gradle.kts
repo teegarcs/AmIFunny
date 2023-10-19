@@ -1,6 +1,8 @@
 plugins {
+    kotlin("kapt")
     id("com.android.application")
     kotlin("android")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -38,6 +40,10 @@ android {
     }
 }
 
+kapt {
+    correctErrorTypes = true
+}
+
 dependencies {
     implementation(project(":shared"))
     implementation(libs.compose.ui)
@@ -45,4 +51,15 @@ dependencies {
     implementation(libs.compose.foundation)
     implementation(libs.compose.material)
     implementation(libs.compose.activity)
+    implementation(libs.activityx)
+    implementation(libs.fragmentx)
+    implementation(libs.compatx)
+    implementation(libs.constraint.classic)
+    implementation(libs.constraint.compose)
+    implementation(libs.nav.fragment)
+    implementation(libs.nav.ui)
+    implementation(libs.hilt)
+    implementation(libs.hilt.compiler)
+    implementation(libs.hilt.compose)
+    implementation(libs.hilt.compose.compiler)
 }
