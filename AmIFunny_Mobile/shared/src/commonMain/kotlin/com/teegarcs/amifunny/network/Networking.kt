@@ -12,7 +12,7 @@ import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
 
 object Networking {
-    private const val ROOT_URL = "http://192.168.86.25:8080/"
+    private const val ROOT_URL = "http://192.168.86.54:8080/"
 
     internal val urlBuilder: (end: String) -> String = {
         ROOT_URL + it

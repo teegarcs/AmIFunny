@@ -2,6 +2,7 @@ package com.teegarcs.amifunny.features.create_joke
 
 import com.teegarcs.amifunny.core.mvi.KMPBaseViewModel
 import com.teegarcs.amifunny.network.joke.GenerateJokeRequest
+import com.teegarcs.amifunny.network.joke.JokeType
 import com.teegarcs.amifunny.network.joke.retrieveJokeService
 import com.teegarcs.amifunny.network.model_builder.ModelState
 import com.teegarcs.amifunny.network.model_builder.executeAPIModelRequest
@@ -19,17 +20,21 @@ class KMPCreateJokeViewModel(
     override fun processIntent(intent: CreateJokeIntent) {
         when (intent) {
             is CreateJokeIntent.RequestCreateJoke -> generateJoke(prompts = intent)
+            CreateJokeIntent.SaveCurrentJoke -> saveJoke()
         }
     }
 
     private fun generateJoke(prompts: CreateJokeIntent.RequestCreateJoke) {
         updateState { copy(isLoading = true) }
         scope.launch {
+            val splitReg = Regex("[\\s,]")
+            val type = JokeType.valueOf(prompts.jokeType)
+            val jokeNouns = prompts.jokePrompt.split(splitReg)
             val joke = executeAPIModelRequest {
                 jokeService.generateJoke(
                     GenerateJokeRequest(
-                        jokeType = prompts.jokeType,
-                        jokeNouns = prompts.jokePrompts,
+                        jokeType = type,
+                        jokeNouns = jokeNouns,
                         familyFriendly = true
                     )
                 )
@@ -51,9 +56,19 @@ class KMPCreateJokeViewModel(
             updateState {
                 copy(
                     isLoading = false,
-                    generatedJoke = message
+                    generatedJoke = message,
+                    jokeSaved = false
                 )
             }
+        }
+    }
+
+    private fun saveJoke() {
+        //TODO save to local disk
+        updateState {
+            copy(
+                jokeSaved = true
+            )
         }
     }
 }

@@ -24,7 +24,10 @@ android {
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
+//            excludes += "/META-INF/gradle/incremental.annotation.processors/**"
         }
+
+
     }
     buildTypes {
         getByName("release") {
@@ -53,13 +56,15 @@ dependencies {
     implementation(libs.compose.activity)
     implementation(libs.activityx)
     implementation(libs.fragmentx)
+    implementation(libs.androidx.core)
     implementation(libs.compatx)
     implementation(libs.constraint.classic)
     implementation(libs.constraint.compose)
     implementation(libs.nav.fragment)
     implementation(libs.nav.ui)
     implementation(libs.hilt)
-    implementation(libs.hilt.compiler)
-    implementation(libs.hilt.compose)
-    implementation(libs.hilt.compose.compiler)
+    kapt(libs.hilt.compiler)
+//    implementation(libs.hilt.compiler)
+//    implementation(libs.hilt.compose)
+//    implementation(libs.hilt.compose.compiler)
 }

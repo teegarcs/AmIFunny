@@ -8,16 +8,15 @@ compileSdk = "34"
 
 # Dependencies
 android-gradle-plugin = "8.0.1"
-#ktlint-gradle = "11.2.0"
-#gradle-versions = "0.42.0"
 ksp = "1.9.10-1.0.13"
-hilt = "2.45"
+hilt = "2.48.1"
 hiltCompose = "1.0.0"
 compose = "1.5.3"
 composeCompiler = "1.5.3"
 #
 androidx-activity = "1.8.0"
 androidx-fragment = "1.6.1"
+androidx-core = "1.12.0"
 androidx-compat = "1.6.1"
 androidx-lifecycle = "2.6.2"
 coroutines = "1.7.1"
@@ -42,6 +41,7 @@ compose-material = { module = "androidx.compose.material:material", version.ref 
 compose-activity = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
 activityx = { module = "androidx.activity:activity-ktx", version.ref = "androidx-activity" }
 fragmentx = { module = "androidx.fragment:fragment-ktx", version.ref = "androidx-fragment" }
+androidx-core = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
 compatx = { module = "androidx.appcompat:appcompat", version.ref = "androidx-compat" }
 constraint-classic = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraint-classic" }
 constraint-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "constraint-compose" }
@@ -70,8 +70,8 @@ sqlDelight-runtime = { module = "com.squareup.sqldelight:runtime", version.ref =
 
 hilt = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
-hilt-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltCompose" }
-hilt-compose-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hiltCompose" }
+#hilt-compose = { module = "androidx.hilt:hilt-navigxation-compose", version.ref = "hiltCompose" }
+#hilt-compose-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hiltCompose" }
 [plugins]
 
 [bundles]

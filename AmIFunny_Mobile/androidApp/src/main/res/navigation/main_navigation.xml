@@ -7,6 +7,11 @@
     <fragment
         android:id="@+id/createJokeFragment"
         android:name="com.teegarcs.amifunny.android.create_joke.CreateJokeFragment"
-        android:label="Create Joke" />
+        android:label="Create" />
+
+    <fragment
+        android:id="@+id/savedJokeFragment"
+        android:name="com.teegarcs.amifunny.android.saved.SavedJokeFragment"
+        android:label="Saved" />
 
 </navigation>

@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.teegarcs.amifunny.android.MyApplicationTheme
+import com.teegarcs.amifunny.android.theme.FunnyTheme
 
 
 @Composable
@@ -37,7 +37,7 @@ fun Loader(modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun PreviewLoaderWithMessage() {
-    MyApplicationTheme {
+    FunnyTheme {
         LoaderWithMessage("30:00")
     }
 }
@@ -45,7 +45,7 @@ fun PreviewLoaderWithMessage() {
 @Preview(showBackground = true)
 @Composable
 fun PreviewLoaderNoMessage() {
-    MyApplicationTheme {
+    FunnyTheme {
         Loader()
     }
 }

@@ -1,25 +1,21 @@
-package com.teegarcs.amifunny.android.create_joke
+package com.teegarcs.amifunny.android.saved
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import com.teegarcs.amifunny.android.core.observeSideEffects
 import com.teegarcs.amifunny.android.theme.FunnyTheme
-import com.teegarcs.amifunny.features.create_joke.CreateJokeSE
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class CreateJokeFragment : Fragment() {
+class SavedJokeFragment : Fragment() {
 
-    private val viewModel: CreateJokeViewModel by viewModels()
-    private val createJokeUI: CreateJokeUI by lazy {
-        CreateJokeUI()
-    }
+//    private val viewModel: CreateJokeViewModel by viewModels()
+//    private val createJokeUI: CreateJokeUI by lazy {
+//        CreateJokeUI()
+//    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,8 +25,8 @@ class CreateJokeFragment : Fragment() {
         return ComposeView(requireContext()).apply {
             setContent {
                 FunnyTheme {
-                    val viewState = viewModel.state.collectAsState()
-                    createJokeUI.BuildUI(state = viewState.value, viewModel::processIntent)
+//                    val viewState = viewModel.state.collectAsState()
+//                    createJokeUI.BuildUI(state = viewState.value, viewModel::processIntent)
                 }
             }
         }
@@ -38,9 +34,9 @@ class CreateJokeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.observeSideEffects<CreateJokeSE>(this) {
-            //TODO
-        }
+//        viewModel.observeSideEffects<CreateJokeSE>(this) {
+//            TODO
+//        }
     }
 
 }
