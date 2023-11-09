@@ -21,7 +21,9 @@ class BaseiOSViewModel<T> : ObservableObject {
     func connect() async throws {
         let sequence = asyncSequence(for: getCastedVM().viewStateFlow)
         for try await viewState in sequence {
-            updateState(newState: viewState as! T)
+            DispatchQueue.main.async {
+                self.updateState(newState: viewState as! T)
+            }
         }
     }
     
