@@ -68,12 +68,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		37648F2560A47EB3D755EC9C /* xcschemes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = xcschemes;
+			path = iosApp.xcodeproj/project.xcworkspace/xcuserdata/cteegarden.xcuserdatad/xcschemes;
+			sourceTree = "<group>";
+		};
 		7555FF72242A565900829871 = {
 			isa = PBXGroup;
 			children = (
 				7555FF7D242A565900829871 /* iosApp */,
 				7555FF7C242A565900829871 /* Products */,
 				7555FFB0242A642200829871 /* Frameworks */,
+				37648F2560A47EB3D755EC9C /* xcschemes */,
 			);
 			sourceTree = "<group>";
 		};

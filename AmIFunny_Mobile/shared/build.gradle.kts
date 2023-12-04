@@ -4,7 +4,8 @@ plugins {
     kotlin("plugin.serialization")
     id("com.squareup.sqldelight")
     id("com.google.devtools.ksp")
-    id("com.rickclephas.kmp.nativecoroutines")
+    id("co.touchlab.skie") version "0.5.6"
+//    id("com.rickclephas.kmp.nativecoroutines")
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)

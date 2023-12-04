@@ -1,8 +1,5 @@
 package com.teegarcs.amifunny.core.mvi
 
-import com.rickclephas.kmp.nativecoroutines.NativeCoroutineScope
-import com.rickclephas.kmp.nativecoroutines.NativeCoroutines
-import com.rickclephas.kmp.nativecoroutines.NativeCoroutinesState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.cancel
@@ -19,14 +16,12 @@ import kotlinx.coroutines.flow.receiveAsFlow
 abstract class KMPBaseViewModel<VS : Any, SE : Any, I : Any>(
     _scope: CoroutineScope?
 ) {
-    @NativeCoroutineScope
     val scope = _scope ?: MainScope()
 
     private val _viewState: MutableStateFlow<VS> by lazy {
         MutableStateFlow(buildInitialState())
     }
 
-    @NativeCoroutinesState
     val viewState: StateFlow<VS>
         get() = _viewState.asStateFlow()
 
@@ -36,7 +31,6 @@ abstract class KMPBaseViewModel<VS : Any, SE : Any, I : Any>(
     @Suppress("MemberVisibilityCanBePrivate")
     private val _sideEffectsChannel = Channel<SE>(Channel.UNLIMITED)
 
-    @NativeCoroutines
     val sideEffects: Flow<SE>
         get() = _sideEffectsChannel.receiveAsFlow()
 
