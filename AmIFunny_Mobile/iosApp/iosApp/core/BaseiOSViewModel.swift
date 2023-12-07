@@ -20,7 +20,6 @@ class BaseiOSViewModel<T> : ObservableObject {
     
     @MainActor
     func connect() async throws {
-
         for try await viewState in getCastedVM().viewState {
             self.updateState(newState: viewState as! T)
         }

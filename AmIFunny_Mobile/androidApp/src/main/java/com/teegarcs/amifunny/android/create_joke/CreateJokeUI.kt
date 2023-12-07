@@ -54,7 +54,7 @@ class CreateJokeUI : BaseComposeUI<CreateJokeState, CreateJokeIntent>() {
 
             FunnyDropDown(
                 R.string.joke_type_label,
-                state.jokeTypes.map { it.name },
+                state.jokeTypes,
                 modifier = Modifier
                     .padding(top = 16.dp, bottom = 32.dp)
                     .fillMaxWidth()

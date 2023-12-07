@@ -6,5 +6,5 @@ data class CreateJokeState(
     val isLoading: Boolean = false,
     val generatedJoke: String? = null,
     val jokeSaved: Boolean = false,
-    val jokeTypes: List<JokeType> = JokeType.entries.toList()
+    val jokeTypes: List<String> = JokeType.entries.map { it.name }.toList()
 )

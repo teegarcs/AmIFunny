@@ -54,7 +54,7 @@ struct JokeContent: View {
                     //TODO figure out how to make label show "Joke Type"
                     Picker("Joke Type", selection: $jokeTypeSelection) {
                         ForEach(0..<state.jokeTypes.count, id: \.self) { index in
-                            Text(state.jokeTypes[index].name)
+                            Text(state.jokeTypes[index])
                         }
                     }
                     
@@ -62,7 +62,7 @@ struct JokeContent: View {
                         Button("Generate Joke"){
                             processIntent(
                                 CreateJokeIntent.RequestCreateJoke(
-                                    jokeType: state.jokeTypes[jokeTypeSelection].name,
+                                    jokeType: state.jokeTypes[jokeTypeSelection],
                                     jokePrompt: jokeEntry
                                 )
                             )
@@ -125,7 +125,7 @@ struct JokeNotSaved_Previews: PreviewProvider {
             isLoading: false,
             generatedJoke: "Some Generated Joke",
             jokeSaved: false,
-            jokeTypes: [JokeType.dad, JokeType.corny, JokeType.knock]
+            jokeTypes: [JokeType.dad.name, JokeType.corny.name, JokeType.knock.name]
         )
         
         JokeContent(state:state){ _ in
@@ -141,7 +141,7 @@ struct Loading_Previews: PreviewProvider {
             isLoading: true,
             generatedJoke: nil,
             jokeSaved: false,
-            jokeTypes: [JokeType.dad, JokeType.corny, JokeType.knock]
+            jokeTypes: [JokeType.dad.name, JokeType.corny.name, JokeType.knock.name]
         )
         
         JokeContent(state:state){ _ in
@@ -157,7 +157,7 @@ struct JokeSaved_Previews: PreviewProvider {
             isLoading: false,
             generatedJoke: "Some Generated Joke",
             jokeSaved: true,
-            jokeTypes: [JokeType.dad, JokeType.corny, JokeType.knock]
+            jokeTypes: [JokeType.dad.name, JokeType.corny.name, JokeType.knock.name]
         )
         
         JokeContent(state:state){ _ in
@@ -174,7 +174,7 @@ struct Default_Previews: PreviewProvider {
             isLoading: false,
             generatedJoke: nil,
             jokeSaved: false,
-            jokeTypes: [JokeType.dad, JokeType.corny, JokeType.knock]
+            jokeTypes: [JokeType.dad.name, JokeType.corny.name, JokeType.knock.name]
         )
         
         JokeContent(state:state){ _ in
