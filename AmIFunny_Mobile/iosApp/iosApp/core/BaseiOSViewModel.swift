@@ -18,6 +18,7 @@ class BaseiOSViewModel<T> : ObservableObject {
         (getFeatureVM() as!KMPBaseViewModel<AnyObject, AnyObject, AnyObject>)
     }
     
+    @MainActor
     func connect() async throws {
 
         for try await viewState in getCastedVM().viewState {

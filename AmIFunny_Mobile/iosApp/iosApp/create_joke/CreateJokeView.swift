@@ -28,10 +28,6 @@ struct CreateJokeView: View {
         .task {
             try? await viewModel.connect()
         }
-        .onDisappear {
-            //if we clear we need to re start when onAppear happens again. Might be unique to tabs.
-//            viewModel.clear()
-        }
     }
 }
 
