@@ -1,5 +1,5 @@
 [versions]
-kotlin = "1.8.21"
+kotlin = "1.9.20"
 
 ## SDK Versions
 minSdk = "29"
@@ -7,24 +7,24 @@ targetSdk = "34"
 compileSdk = "34"
 
 # Dependencies
-android-gradle-plugin = "8.0.1"
-ksp = "1.9.10-1.0.13"
+android-gradle-plugin = "8.1.2"
+ksp = "1.9.21-1.0.15"
 hilt = "2.48.1"
 hiltCompose = "1.0.0"
-compose = "1.5.3"
-composeCompiler = "1.5.3"
+compose = "1.5.4"
+composeCompiler = "1.5.6"
 #
-androidx-activity = "1.8.0"
-androidx-fragment = "1.6.1"
+androidx-activity = "1.8.1"
+androidx-fragment = "1.6.2"
 androidx-core = "1.12.0"
 androidx-compat = "1.6.1"
 androidx-lifecycle = "2.6.2"
-coroutines = "1.7.1"
+coroutines = "1.7.3"
 kotlinx-datetime = "0.4.0"
 ktor = "2.3.2"
 constraint-classic = "2.1.4"
 constraint-compose = "1.0.1"
-nav-component = "2.7.4"
+nav-component = "2.7.5"
 
 sqlDelight = "1.5.5"
 kmpNativecoroutines = "1.0.0-ALPHA-18"

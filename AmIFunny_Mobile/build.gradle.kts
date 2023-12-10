@@ -1,7 +1,7 @@
 
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    kotlin("android") version libs.versions.kotlin.get() apply false
+    kotlin("android") version "1.9.21" apply false
     kotlin("multiplatform") version libs.versions.kotlin.get() apply false
     kotlin("plugin.serialization") version libs.versions.kotlin.get() apply false
     id("com.android.application") version libs.versions.android.gradle.plugin.get() apply false

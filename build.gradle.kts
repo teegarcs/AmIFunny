@@ -19,7 +19,6 @@ val kotlinSerializationVersion: String by project
 allprojects {
 	repositories {
 		mavenCentral()
-		mavenLocal()
 	}
 }
 

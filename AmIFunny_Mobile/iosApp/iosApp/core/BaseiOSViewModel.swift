@@ -8,10 +8,7 @@
 
 import Foundation
 import shared
-import KMPNativeCoroutinesAsync
 
-//TODO look at protocol
-//consider swiftLint AirBNB linter rules
 class BaseiOSViewModel<T> : ObservableObject {
     
     private func getCastedVM() -> KMPBaseViewModel<AnyObject, AnyObject, AnyObject> {

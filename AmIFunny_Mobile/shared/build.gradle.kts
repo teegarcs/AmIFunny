@@ -5,7 +5,6 @@ plugins {
     id("com.squareup.sqldelight")
     id("com.google.devtools.ksp")
     id("co.touchlab.skie") version "0.5.6"
-//    id("com.rickclephas.kmp.nativecoroutines")
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
@@ -77,6 +76,10 @@ android {
     defaultConfig {
         minSdk = libs.versions.minSdk.get().toInt()
     }
+}
+dependencies {
+    implementation("androidx.core:core-ktx:+")
+    implementation("androidx.core:core-ktx:+")
 }
 
 kotlin.sourceSets.all {

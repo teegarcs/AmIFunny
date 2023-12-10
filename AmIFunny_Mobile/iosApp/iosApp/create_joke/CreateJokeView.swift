@@ -88,7 +88,7 @@ struct JokeContent: View {
                                 
                                 HStack{
                                     Spacer()
-                                    var buttonLabel = if(state.jokeSaved){
+                                    let buttonLabel = if(state.jokeSaved){
                                         "Saved"
                                     }else{
                                        "Save"
