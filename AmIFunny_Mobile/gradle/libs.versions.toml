@@ -1,4 +1,5 @@
 [versions]
+kermit = "2.0.3"
 kotlin = "1.9.20"
 
 ## SDK Versions
@@ -45,6 +46,7 @@ androidx-core = { module = "androidx.core:core-ktx", version.ref = "androidx-cor
 compatx = { module = "androidx.appcompat:appcompat", version.ref = "androidx-compat" }
 constraint-classic = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraint-classic" }
 constraint-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "constraint-compose" }
+kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
 nav-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "nav-component" }
 nav-ui = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "nav-component" }
 

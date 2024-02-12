@@ -1,11 +1,9 @@
 package com.teegarcs.amifunny.network.joke
 
-import com.teegarcs.amifunny.KMLogger
 import com.teegarcs.amifunny.network.Networking
 import com.teegarcs.amifunny.network.Networking.urlBuilder
 import io.ktor.client.call.body
 import io.ktor.client.request.setBody
-import io.ktor.client.utils.EmptyContent.contentType
 import io.ktor.http.ContentType
 import io.ktor.http.contentType
 
