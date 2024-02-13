@@ -1,6 +1,6 @@
 [versions]
 kermit = "2.0.3"
-kotlin = "1.9.20"
+kotlin = "1.9.22"
 
 ## SDK Versions
 minSdk = "29"
@@ -8,24 +8,24 @@ targetSdk = "34"
 compileSdk = "34"
 
 # Dependencies
-android-gradle-plugin = "8.1.2"
-ksp = "1.9.21-1.0.15"
+android-gradle-plugin = "8.2.2"
+ksp = "1.9.22-1.0.17"
 hilt = "2.48.1"
 hiltCompose = "1.0.0"
-compose = "1.5.4"
-composeCompiler = "1.5.6"
+compose = "1.6.1"
+composeCompiler = "1.5.9"
 #
-androidx-activity = "1.8.1"
+androidx-activity = "1.8.2"
 androidx-fragment = "1.6.2"
 androidx-core = "1.12.0"
 androidx-compat = "1.6.1"
-androidx-lifecycle = "2.6.2"
+androidx-lifecycle = "2.7.0"
 coroutines = "1.7.3"
 kotlinx-datetime = "0.4.0"
 ktor = "2.3.2"
 constraint-classic = "2.1.4"
 constraint-compose = "1.0.1"
-nav-component = "2.7.5"
+nav-component = "2.7.7"
 
 sqlDelight = "1.5.5"
 kmpNativecoroutines = "1.0.0-ALPHA-18"

@@ -4,17 +4,17 @@ plugins {
     kotlin("plugin.serialization")
     id("com.squareup.sqldelight")
     id("com.google.devtools.ksp")
-    id("co.touchlab.skie") version "0.5.6"
+    id("co.touchlab.skie") version "0.6.1"
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
 kotlin {
-    targetHierarchy.default()
+    applyDefaultHierarchyTemplate()
 
     androidTarget {
         compilations.all {
             kotlinOptions {
-                jvmTarget = "1.8"
+                jvmTarget = "17"
             }
         }
     }
@@ -77,10 +77,10 @@ android {
     defaultConfig {
         minSdk = libs.versions.minSdk.get().toInt()
     }
-}
-dependencies {
-    implementation("androidx.core:core-ktx:+")
-    implementation("androidx.core:core-ktx:+")
+    compileOptions {
+        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_17
+    }
 }
 
 kotlin.sourceSets.all {
