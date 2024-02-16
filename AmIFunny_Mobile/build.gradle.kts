@@ -7,7 +7,6 @@ plugins {
     id("com.android.application") version libs.versions.android.gradle.plugin.get() apply false
     id("com.android.library") version libs.versions.android.gradle.plugin.get() apply false
     id("com.google.devtools.ksp") version libs.versions.ksp.get() apply false
-    id("com.squareup.sqldelight") version libs.versions.sqlDelight.get() apply false
     id("com.google.dagger.hilt.android") version libs.versions.hilt.get() apply false
 }
 

@@ -1,6 +1,8 @@
 package com.teegarcs.amifunny.features.create_joke
 
 import com.teegarcs.amifunny.core.mvi.KMPBaseViewModel
+import com.teegarcs.amifunny.data.SavedJoke
+import com.teegarcs.amifunny.data.getDAO
 import com.teegarcs.amifunny.network.joke.GenerateJokeRequest
 import com.teegarcs.amifunny.network.joke.JokeType
 import com.teegarcs.amifunny.network.joke.retrieveJokeService
@@ -13,6 +15,7 @@ class KMPCreateJokeViewModel(
     _scope: CoroutineScope? = null
 ) : KMPBaseViewModel<CreateJokeState, CreateJokeSE, CreateJokeIntent>(_scope) {
 
+    private var currentJokeNouns: List<String> = emptyList()
     private val jokeService = retrieveJokeService()
 
     override fun buildInitialState() = CreateJokeState()
@@ -29,12 +32,12 @@ class KMPCreateJokeViewModel(
         scope.launch {
             val splitReg = Regex("[\\s,]")
             val type = JokeType.valueOf(prompts.jokeType)
-            val jokeNouns = prompts.jokePrompt.split(splitReg)
+            currentJokeNouns = prompts.jokePrompt.split(splitReg)
             val joke = executeAPIModelRequest {
                 jokeService.generateJoke(
                     GenerateJokeRequest(
                         jokeType = type,
-                        jokeNouns = jokeNouns,
+                        jokeNouns = currentJokeNouns,
                         familyFriendly = true
                     )
                 )
@@ -64,11 +67,21 @@ class KMPCreateJokeViewModel(
     }
 
     private fun saveJoke() {
-        //TODO save to local disk
-        updateState {
-            copy(
-                jokeSaved = true
+        scope.launch {
+            getDAO().insert(
+                SavedJoke(
+                    joke = currentState.generatedJoke.orEmpty(),
+                    nouns = currentJokeNouns.joinToString()
+                )
             )
+
+            sendSideEffect(CreateJokeSE.JokeSaved)
+
+            updateState {
+                copy(
+                    jokeSaved = true
+                )
+            }
         }
     }
 }

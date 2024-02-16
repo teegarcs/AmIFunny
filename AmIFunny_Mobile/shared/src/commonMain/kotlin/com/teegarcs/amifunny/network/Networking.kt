@@ -11,13 +11,13 @@ import kotlinx.coroutines.IO
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
 
-object Networking {
-    private const val ROOT_URL = "http://192.168.86.54:8080/"
+class Networking {
+    private val ROOT_URL = "http://192.168.86.25:8080/"
 
     internal val urlBuilder: (end: String) -> String = {
         ROOT_URL + it
     }
-    internal val ktorClient: HttpClient by lazy {
+    private val ktorClient: HttpClient by lazy {
         HttpClient {
             this.expectSuccess = true
             install(ContentNegotiation) {

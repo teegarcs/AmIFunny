@@ -2,8 +2,8 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     kotlin("plugin.serialization")
-    id("com.squareup.sqldelight")
     id("com.google.devtools.ksp")
+    id("io.realm.kotlin") version "1.13.0"
     id("co.touchlab.skie") version "0.6.1"
 }
 
@@ -34,33 +34,25 @@ kotlin {
             languageSettings.optIn("kotlin.experimental.ExperimentalObjCName")
         }
 
-        val commonMain by getting {
-            dependencies {
-                implementation(libs.sqlDelight.coroutinesExt)
+        commonMain.dependencies {
+            implementation(libs.kotlinx.datetime)
+            implementation(libs.coroutines.core)
+            implementation("io.realm.kotlin:library-base:1.13.0")
 
-                implementation(libs.kotlinx.datetime)
-                implementation(libs.coroutines.core)
-
-                implementation(libs.kermit)
-                implementation(libs.ktor.client.core)
-                implementation(libs.ktor.client.logging)
-                implementation(libs.ktor.client.serialization)
-                implementation(libs.ktor.client.contentNegotiation)
-            }
+            implementation(libs.kermit)
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.logging)
+            implementation(libs.ktor.client.serialization)
+            implementation(libs.ktor.client.contentNegotiation)
         }
 
-        val androidMain by getting {
-            dependencies {
-                implementation(libs.sqlDelight.android)
-                implementation(libs.ktor.client.android)
-                implementation(libs.androidx.lifecycle.viewmodel)
-            }
+        androidMain.dependencies {
+            implementation(libs.ktor.client.android)
+            implementation(libs.androidx.lifecycle.viewmodel)
         }
-        val iosMain by getting {
-            dependencies {
-                implementation(libs.sqlDelight.native)
-                implementation(libs.ktor.client.ios)
-            }
+
+        iosMain.dependencies {
+            implementation(libs.ktor.client.ios)
         }
 
         val commonTest by getting {

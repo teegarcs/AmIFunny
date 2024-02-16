@@ -1,7 +1,6 @@
 package com.teegarcs.amifunny.network.joke
 
 import com.teegarcs.amifunny.network.Networking
-import com.teegarcs.amifunny.network.Networking.urlBuilder
 import io.ktor.client.call.body
 import io.ktor.client.request.setBody
 import io.ktor.http.ContentType
@@ -25,8 +24,9 @@ interface JokeService {
 }
 
 class JokeServiceImpl : JokeService {
+    private val networking = Networking()
     override suspend fun generateJoke(request: GenerateJokeRequest): JokeResponse {
-        return Networking.performPost(urlBuilder("joke")) {
+        return networking.performPost(networking.urlBuilder("joke")) {
             contentType(ContentType.Application.Json)
             setBody(request)
         }.body()
