@@ -3,7 +3,6 @@ package com.teegarcs.amifunny.features.save_joke
 import com.teegarcs.amifunny.core.mvi.KMPBaseViewModel
 import com.teegarcs.amifunny.data.SavedJoke
 import com.teegarcs.amifunny.data.getDAO
-import io.realm.kotlin.notifications.InitialResults
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -15,11 +14,9 @@ class KMPSavedJokeViewModel(
     init {
         scope.launch {
             getDAO().retrieve<SavedJoke>().asFlow().collectLatest {
-                if (it is InitialResults) {
-                    val results = it.list.toList()
-                    updateState {
-                        copy(jokes = results, isLoading = false)
-                    }
+                val results = it.list.toList()
+                updateState {
+                    copy(jokes = results, isLoading = false)
                 }
             }
         }

@@ -3,6 +3,7 @@ kermit = "2.0.3"
 kotlin = "1.9.22"
 
 ## SDK Versions
+libraryBase = "1.13.0"
 minSdk = "29"
 targetSdk = "34"
 compileSdk = "34"
@@ -44,6 +45,7 @@ compatx = { module = "androidx.appcompat:appcompat", version.ref = "androidx-com
 constraint-classic = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraint-classic" }
 constraint-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "constraint-compose" }
 kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
+realm-base = { module = "io.realm.kotlin:library-base", version.ref = "libraryBase" }
 nav-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "nav-component" }
 nav-ui = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "nav-component" }
 

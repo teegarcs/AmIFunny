@@ -37,7 +37,7 @@ kotlin {
         commonMain.dependencies {
             implementation(libs.kotlinx.datetime)
             implementation(libs.coroutines.core)
-            implementation("io.realm.kotlin:library-base:1.13.0")
+            implementation(libs.realm.base)
 
             implementation(libs.kermit)
             implementation(libs.ktor.client.core)

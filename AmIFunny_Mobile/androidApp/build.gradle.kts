@@ -64,6 +64,7 @@ dependencies {
     implementation(libs.nav.ui)
     implementation(libs.hilt)
     kapt(libs.hilt.compiler)
+    implementation(libs.realm.base)
 //    implementation(libs.hilt.compiler)
 //    implementation(libs.hilt.compose)
 //    implementation(libs.hilt.compose.compiler)
