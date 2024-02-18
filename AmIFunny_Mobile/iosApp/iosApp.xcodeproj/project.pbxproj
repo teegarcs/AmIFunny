@@ -15,6 +15,7 @@
 		EBC99C272AFA78BE00C0BB3D /* CreateJokeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC99C262AFA78BE00C0BB3D /* CreateJokeView.swift */; };
 		EBC99C2A2AFA78DC00C0BB3D /* SavedJokeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC99C292AFA78DC00C0BB3D /* SavedJokeView.swift */; };
 		EBCBF69B2ABA11A30065727B /* BaseiOSViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBF69A2ABA11A30065727B /* BaseiOSViewModel.swift */; };
+		EBF185A52B8283C600545906 /* SavedJokeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF185A42B8283C600545906 /* SavedJokeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +42,7 @@
 		EBC99C262AFA78BE00C0BB3D /* CreateJokeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJokeView.swift; sourceTree = "<group>"; };
 		EBC99C292AFA78DC00C0BB3D /* SavedJokeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedJokeView.swift; sourceTree = "<group>"; };
 		EBCBF69A2ABA11A30065727B /* BaseiOSViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseiOSViewModel.swift; sourceTree = "<group>"; };
+		EBF185A42B8283C600545906 /* SavedJokeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedJokeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				EBC99C292AFA78DC00C0BB3D /* SavedJokeView.swift */,
+				EBF185A42B8283C600545906 /* SavedJokeViewModel.swift */,
 			);
 			path = saved;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				EBC99C272AFA78BE00C0BB3D /* CreateJokeView.swift in Sources */,
 				EBCBF69B2ABA11A30065727B /* BaseiOSViewModel.swift in Sources */,
+				EBF185A52B8283C600545906 /* SavedJokeViewModel.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 				EB4C20492AB4E76E0035B41E /* CreateJokeViewModel.swift in Sources */,
 				EBC99C2A2AFA78DC00C0BB3D /* SavedJokeView.swift in Sources */,
