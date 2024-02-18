@@ -118,67 +118,56 @@ struct JokeContent: View {
 /**
  PREVIEWS
  */
-struct JokeNotSaved_Previews: PreviewProvider {
+#Preview("Joke Not Saved") {
+    let state = CreateJokeState(
+        isLoading: false,
+        generatedJoke: "Some Generated Joke",
+        jokeSaved: false,
+        jokeTypes: [JokeType.dad.name, JokeType.corny.name, JokeType.knock.name]
+    )
     
-    static var previews: some View {
-        let state = CreateJokeState(
-            isLoading: false,
-            generatedJoke: "Some Generated Joke",
-            jokeSaved: false,
-            jokeTypes: [JokeType.dad.name, JokeType.corny.name, JokeType.knock.name]
-        )
+    return JokeContent(state:state){ _ in
         
-        JokeContent(state:state){ _ in
-            
-        }
     }
 }
 
-struct Loading_Previews: PreviewProvider {
+#Preview("Joke Loading") {
+    let state = CreateJokeState(
+        isLoading: true,
+        generatedJoke: nil,
+        jokeSaved: false,
+        jokeTypes: [JokeType.dad.name, JokeType.corny.name, JokeType.knock.name]
+    )
     
-    static var previews: some View {
-        let state = CreateJokeState(
-            isLoading: true,
-            generatedJoke: nil,
-            jokeSaved: false,
-            jokeTypes: [JokeType.dad.name, JokeType.corny.name, JokeType.knock.name]
-        )
+   return JokeContent(state:state){ _ in
         
-        JokeContent(state:state){ _ in
-            
-        }
-    }
-}
-
-struct JokeSaved_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        let state = CreateJokeState(
-            isLoading: false,
-            generatedJoke: "Some Generated Joke",
-            jokeSaved: true,
-            jokeTypes: [JokeType.dad.name, JokeType.corny.name, JokeType.knock.name]
-        )
-        
-        JokeContent(state:state){ _ in
-            
-        }
     }
 }
 
 
-struct Default_Previews: PreviewProvider {
+#Preview("Joke Saved") {
+    let state = CreateJokeState(
+        isLoading: false,
+        generatedJoke: "Some Generated Joke",
+        jokeSaved: true,
+        jokeTypes: [JokeType.dad.name, JokeType.corny.name, JokeType.knock.name]
+    )
     
-    static var previews: some View {
-        let state = CreateJokeState(
-            isLoading: false,
-            generatedJoke: nil,
-            jokeSaved: false,
-            jokeTypes: [JokeType.dad.name, JokeType.corny.name, JokeType.knock.name]
-        )
+    return JokeContent(state:state){ _ in
         
-        JokeContent(state:state){ _ in
-            
-        }
+    }
+}
+
+
+#Preview("Default") {
+    let state = CreateJokeState(
+        isLoading: false,
+        generatedJoke: nil,
+        jokeSaved: false,
+        jokeTypes: [JokeType.dad.name, JokeType.corny.name, JokeType.knock.name]
+    )
+    
+    return JokeContent(state:state){ _ in
+        
     }
 }
