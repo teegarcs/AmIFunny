@@ -18,7 +18,7 @@ If you are hitting the REST Services packaged with this project that you are run
 The REST services live in the Project/aifunny-app directory. The steps below are what you can take to run these outside of the IntelliJ IDE. 
 #### Setup:
 You will need to add your own PALM/Vertex API key to interact with the AI Model. To add your own, place it here: `aifunny-app/src/main/resources/application.properties`
-
+Create your own API key here: https://ai.google.dev/tutorials/setup
 #### Build
 ```bash
 ./gradlew clean build
