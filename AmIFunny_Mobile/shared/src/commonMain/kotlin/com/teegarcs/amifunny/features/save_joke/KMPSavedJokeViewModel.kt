@@ -1,5 +1,6 @@
 package com.teegarcs.amifunny.features.save_joke
 
+import co.touchlab.kermit.Logger
 import com.teegarcs.amifunny.core.mvi.KMPBaseViewModel
 import com.teegarcs.amifunny.data.SavedJoke
 import com.teegarcs.amifunny.data.getDAO
@@ -8,7 +9,8 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 class KMPSavedJokeViewModel(
-    _scope: CoroutineScope? = null
+    _scope: CoroutineScope? = null,
+    private val abstraction: SampleNativeAbstraction
 ) : KMPBaseViewModel<SaveJokeState, SaveJokeSE, SaveJokeIntent>(_scope) {
 
     init {
@@ -19,6 +21,15 @@ class KMPSavedJokeViewModel(
                     copy(jokes = results, isLoading = false)
                 }
             }
+        }
+    }
+
+    /**
+     * Sample of how to use the abstraction of some native framework without using expects/actuals
+     */
+    private fun exampleAbstractionUse() {
+        abstraction.loadSomethingNative {
+            Logger.i { "RESULT: $it" }
         }
     }
 

@@ -15,7 +15,7 @@ class SavedJokeViewModel : BaseiOSViewModel<SaveJokeState> {
     @Published var state: SaveJokeState
     
     override init() {
-        self.featureVM = KMPSavedJokeViewModel(_scope: nil)
+        self.featureVM = KMPSavedJokeViewModel(_scope: nil, abstraction: SampleNativeAbstractionImpl())
         self.state = featureVM.currentState
     }
     

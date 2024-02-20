@@ -12,6 +12,7 @@
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 		EB4C20492AB4E76E0035B41E /* CreateJokeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C20482AB4E76E0035B41E /* CreateJokeViewModel.swift */; };
+		EB9B6E642B852F40000E9A45 /* SampleNativeAbstractionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9B6E632B852F40000E9A45 /* SampleNativeAbstractionImpl.swift */; };
 		EBC99C272AFA78BE00C0BB3D /* CreateJokeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC99C262AFA78BE00C0BB3D /* CreateJokeView.swift */; };
 		EBC99C2A2AFA78DC00C0BB3D /* SavedJokeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC99C292AFA78DC00C0BB3D /* SavedJokeView.swift */; };
 		EBCBF69B2ABA11A30065727B /* BaseiOSViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBF69A2ABA11A30065727B /* BaseiOSViewModel.swift */; };
@@ -39,6 +40,7 @@
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB4C20482AB4E76E0035B41E /* CreateJokeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJokeViewModel.swift; sourceTree = "<group>"; };
+		EB9B6E632B852F40000E9A45 /* SampleNativeAbstractionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleNativeAbstractionImpl.swift; sourceTree = "<group>"; };
 		EBC99C262AFA78BE00C0BB3D /* CreateJokeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJokeView.swift; sourceTree = "<group>"; };
 		EBC99C292AFA78DC00C0BB3D /* SavedJokeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedJokeView.swift; sourceTree = "<group>"; };
 		EBCBF69A2ABA11A30065727B /* BaseiOSViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseiOSViewModel.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			children = (
 				EBC99C292AFA78DC00C0BB3D /* SavedJokeView.swift */,
 				EBF185A42B8283C600545906 /* SavedJokeViewModel.swift */,
+				EB9B6E632B852F40000E9A45 /* SampleNativeAbstractionImpl.swift */,
 			);
 			path = saved;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				EBC99C272AFA78BE00C0BB3D /* CreateJokeView.swift in Sources */,
 				EBCBF69B2ABA11A30065727B /* BaseiOSViewModel.swift in Sources */,
+				EB9B6E642B852F40000E9A45 /* SampleNativeAbstractionImpl.swift in Sources */,
 				EBF185A52B8283C600545906 /* SavedJokeViewModel.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 				EB4C20492AB4E76E0035B41E /* CreateJokeViewModel.swift in Sources */,

@@ -9,7 +9,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SaveJokeViewModel @Inject constructor() : BaseAndroidViewModel<KMPSavedJokeViewModel>() {
-    override val coreViewModel: KMPSavedJokeViewModel = KMPSavedJokeViewModel(viewModelScope)
+    override val coreViewModel: KMPSavedJokeViewModel =
+        KMPSavedJokeViewModel(viewModelScope, SampleNativeAbstractionImpl())
     val state = coreViewModel.viewState
 
     override fun processIntent(intent: Any) {
