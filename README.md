@@ -1,8 +1,11 @@
 The AI Joke Generator app by Clinton Teegarden
 ## Kotlin Multiplatform 
 Project Directory: Project/AmIFunny_Mobile
+
 XCode Project Directory: Project/AmIFunny_Mobile/iOSApp
+
 Android Project Directory: Project/AmIFunny_Mobile/androidApp
+
 Shared Code Directory: Project/AmIFunny_Mobile/Shared
 
 #### Running with Local Services
